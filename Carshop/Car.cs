@@ -8,11 +8,13 @@ namespace CarsShop
 {
     public class Car
     {
+        private double price;
+
         public string Name{ get; set; }
 
         public string Color { get; set; }
 
-        public double Price { get; set; }
+        public double Price { get { return price; } set { price = value; } }
 
         public double Sale { get; set; }
 

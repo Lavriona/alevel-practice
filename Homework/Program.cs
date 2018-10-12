@@ -26,8 +26,12 @@ namespace Homework
 
                 Console.WriteLine("Введите цену: ");
 
-               car[i].Price = Convert.ToDouble(Console.ReadLine());
-                
+                double price;
+                string priceIn = Console.ReadLine();
+                if ( double.TryParse(priceIn, out price) )
+                {
+                    car[i].Price = price;
+                }
             }
 
             Console.WriteLine("Ассортимент магазина:");
@@ -39,7 +43,11 @@ namespace Homework
 
             Console.Write("Получить скидку (1 - да; 2 - нет) ? ");
 
-            if (Convert.ToInt32(Console.ReadLine()) == 1) {
+            int choose;
+            string s = Console.ReadLine();
+            int.TryParse(s, out choose);
+
+            if (choose == 1) {
 
                 Console.WriteLine("Введите название машины для скидки:");
                 string carName = Console.ReadLine();
